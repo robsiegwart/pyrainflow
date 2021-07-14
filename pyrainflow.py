@@ -72,12 +72,11 @@ def peak_valley(signal):
 
 def discretize(signal, bins=128):
     '''
-    Discretize the signal into discrete bins defined by parameters ``ratio`` or
-    ``size``.
+    Discretize the signal into discrete bins.
 
     :param Series signal:   The input ``Series`` data
     :param int bins:        The number of bins to divide the data into, defaults
-                            to 128
+                            to 128.
     '''
     bins_list = np.linspace(min(signal), max(signal), bins).round(4)
     discretized = []
@@ -91,8 +90,8 @@ def merge_plateus(signal, tratio=0.0005):
     '''
     Average any flat plateaus in the signal.
 
-    ``peak_valley()`` is called at the end because there may now be a single
-    point (the merged point) in between a peak and valley.
+    ``peak_valley()`` is called at the end because there may be a single
+    point (the merged point) remaining between a peak and valley.
 
     :param float tratio:    Tolerance ratio for what is deemed "flat". Is a
                             multiplier to (max()-min()). Defaults to 0.05%.
@@ -116,7 +115,7 @@ def merge_plateus(signal, tratio=0.0005):
 
 def count4pt(signal, bins):
     '''
-    Count cycles in a preprocessed signal by the Four-Point Counting Method.
+    Count cycles by the Four-Point Counting Method.
     '''
     rm = pd.DataFrame(0, index=bins, columns=bins)
     sgnl = signal.copy()
