@@ -106,4 +106,4 @@ Yielding the following:
 50       1  1.8417  64.05455
 ```
 
-![](Images\demo_output_rainflow_matrix.png)
+![](Images/demo_output_rainflow_matrix.png)
