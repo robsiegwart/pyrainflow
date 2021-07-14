@@ -14,7 +14,8 @@ After downloading, in your virtualenv, issue:
 ## Example usage
 
 Sample data are included in the `Sample Data` directory which are heart rate
-data from http://ecg.mit.edu/time-series/.
+data from http://ecg.mit.edu/time-series/ used as a substitute for a
+load-history.
 
 The file `hr.207` looks like the following:
 
@@ -49,8 +50,9 @@ print(table(rm))
 plot_rm(rm, bins)
 ```
 
-Yielding the following:
+Yielding the following output.
 
+Cycles table:
 ```
     Cycles   Range      Mean
 23       2  0.3684  58.34520
@@ -105,5 +107,7 @@ Yielding the following:
 22       1  0.5525  58.06895
 50       1  1.8417  64.05455
 ```
+
+Rainflow diagram:
 
 ![](Images/demo_output_rainflow_matrix.png)
