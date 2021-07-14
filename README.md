@@ -25,6 +25,8 @@ counting:
 
 ![](Images/hr.207_processed.png)
 
+A sample script applying the functions looks like:
+
 ```Python
 import pandas as pd
 from pyrainflow import preprocess, count4pt, plot_rm, table
@@ -32,10 +34,12 @@ from pyrainflow import preprocess, count4pt, plot_rm, table
 # Read data into a Pandas Series object
 data = pd.read_table('hr.207').squeeze()
 
-# Pre-process the data
-data = preprocess(data)
+# Pre-process the data, which returns the data as a Series along with a numpy
+# array containing the discretized values (bins)
+data, bins = preprocess(data)
 
-# Call the cycle counting method
+# Call the cycle counting method, which returns a rainflow matrix and the
+# residual Series
 rm, residual = count4pt(data, bins)
 
 # Print the cycles table
@@ -102,4 +106,4 @@ Yielding the following:
 50       1  1.8417  64.05455
 ```
 
-![](Images\demo_output_rainflow_matrix.png)
+![](Images\demo_output_rainflow_
